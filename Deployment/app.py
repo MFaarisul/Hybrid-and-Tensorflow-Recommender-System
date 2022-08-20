@@ -29,10 +29,9 @@ def predict(title, similarity_weight=0.7, top_n=10):
 
 def main():
     html_temp = '''
-    <h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 30px; color: #c9184a; text-align: center;
+    <h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 30px; color: #780116; text-align: center;
     line-height: 1.25;">Recommender System<br>
-    <span style="color: #ff97b7; font-size: 48px"><b>Movie Recommendation</b></span><br>
-    <span style="color: #ffc8dd; font-size: 20px">Using Hybrid and TFRS</span>
+    <span style="color: #f7b538; font-size: 48px"><b>Movie Recommendation</b></span><br>
     </h1>
     <hr>
     '''
@@ -41,7 +40,7 @@ def main():
     col1, col2, col3 = st.columns([2,1,2])
     
     with col1:
-        st.markdown('<h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 22px; color: #c9184a; text-align: left; line-height: 1.25;"><u>Input</u></h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 22px; color: #c32f27; text-align: left; line-height: 1.25;"><u>Input</u></h1>', unsafe_allow_html=True)
 
         movie = st.text_input('Movie Title', '')
         top_n = st.slider('Top n Result', 1, 10, 10)
@@ -64,7 +63,7 @@ def main():
             ''')
 
     with col3:
-        st.markdown('<h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 22px; color: #c9184a; text-align: left; line-height: 1.25;"><u>Result</u></h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-family: Trebuchet MS; padding: 12px; font-size: 22px; color: #c32f27; text-align: left; line-height: 1.25;"><u>Result</u></h1>', unsafe_allow_html=True)
 
         try:
             st.dataframe(predict(title, similarity_weight=0.7, top_n=top))
